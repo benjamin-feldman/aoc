@@ -22,7 +22,6 @@
 (defn coll-except-one [coll]
   (map (fn [idx] (concat (take idx coll) (drop (inc idx) coll))) (range (count coll))))
 
-
 (defn safe-dampener [coll]
   (or (safe coll)
       (reduce #(or %1 %2) false (map safe (coll-except-one coll)))))
