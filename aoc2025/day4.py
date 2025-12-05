@@ -1,3 +1,6 @@
+from enum import IntEnum
+
+
 def is_accessible(i: int, j: int, grid: list[list[int]]) -> bool:
     neighbours_count = 0
 
@@ -23,7 +26,7 @@ def is_accessible(i: int, j: int, grid: list[list[int]]) -> bool:
     return neighbours_count < 4
 
 
-def part_1(grid: list[list[int]]) -> bool:
+def part_1(grid: list[list[int]]) -> int:
     result = 0
     m, n = len(grid), len(grid[0])
 
@@ -35,7 +38,7 @@ def part_1(grid: list[list[int]]) -> bool:
     return result
 
 
-def part_2(grid: list[list[int]]) -> bool:
+def part_2(grid: list[list[int]]) -> int:
     result = 0
     m, n = len(grid), len(grid[0])
 
