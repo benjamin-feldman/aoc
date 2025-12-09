@@ -80,7 +80,7 @@ def part_2(input_data: list[str]) -> int:
         x2, y2 = tiles[j]
         i1, j1 = x_to_idx[x1], y_to_idx[y1]
         i2, j2 = x_to_idx[x2], y_to_idx[y2]
-        
+
         if count_invalid(i1, j1, i2, j2) == 0:
             area = (abs(x1 - x2) + 1) * (abs(y1 - y2) + 1)
             result = max(result, area)
