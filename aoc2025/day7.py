@@ -2,21 +2,24 @@ def part_1(input_data: list[str]) -> int:
     result = 0
     rows = [list(l) for l in input_data]
     beams_indices = [i for i in range(len(rows[0])) if rows[0][i] == "S"]
-    
+
     for row in rows[1:]:
         splitters_indices = [i for i in range(len(row)) if row[i] == "^"]
         new_beams_indices = []
         for i in splitters_indices:
             if i in beams_indices:
                 result += 1
-                if i-1 >= 0:
-                    new_beams_indices.append(i-1)
-                if i+1 < len(row):
-                    new_beams_indices.append(i+1)
+                if i - 1 >= 0:
+                    new_beams_indices.append(i - 1)
+                if i + 1 < len(row):
+                    new_beams_indices.append(i + 1)
         if new_beams_indices:
-            beams_indices = new_beams_indices + [i for i in beams_indices if i not in splitters_indices]
-            
+            beams_indices = new_beams_indices + [
+                i for i in beams_indices if i not in splitters_indices
+            ]
+
     return result
+
 
 def part_2(input_data: list[str]) -> int:
     rows = [list(l) for l in input_data]
